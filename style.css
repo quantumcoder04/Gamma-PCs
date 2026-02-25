@@ -21,12 +21,6 @@ body {
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #00f7ff;
-}
-
 .nav-icons a {
   color: white;
   font-size: 22px;
@@ -75,6 +69,37 @@ body {
 .hero-btn:hover {
   background: #00c4cc;
   transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+  padding: 80px 20px;
+  background: #141428;
+  text-align: center;
+}
+
+.about-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #00f7ff;
+}
+
+.about p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.about .highlight {
+  font-size: 18px;
+  color: #00f7ff;
+  font-weight: bold;
 }
 
 /* Title */
