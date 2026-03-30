@@ -33,7 +33,10 @@
 
     <div class="nav-icons">
       <a href="#"><i class="ri-hard-drive-fill"></i></a>
-      <a href="#"><i class="ri-shopping-cart-2-fill"></i></a>
+      <a href="#" id="cartNavBtn" class="cart-nav-btn">
+        <i class="ri-shopping-cart-2-fill"></i>
+        <span id="cartCount" class="cart-badge" style="display:none;">0</span>
+      </a>
       <a href="#"><i class="ri-discord-fill"></i></a>
       <a href="#"><i class="ri-login-circle-line"></i></a>
     </div>
@@ -127,7 +130,49 @@
     <p>© 2026 GAMMA PCs. All rights reserved.</p>
   </footer>
 
-  <script src="search.js" defer></script>
+  <!-- Cart Modal Overlay -->
+  <div class="cart-overlay" id="cartOverlay"></div>
 
+  <!-- Cart Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-header">
+      <h2><i class="ri-shopping-cart-2-fill"></i> Your Cart</h2>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div class="cart-empty" id="cartEmpty">
+      <i class="ri-inbox-line"></i>
+      <p>Your cart is empty</p>
+      <span>Add a build to get started</span>
+    </div>
+
+    <!-- Items List -->
+    <ul class="cart-items-list" id="cartItemsList"></ul>
+
+    <!-- Footer: Total + Checkout -->
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">
+        <i class="ri-secure-payment-line"></i> Proceed to Checkout
+      </button>
+    </div>
+  </div>
+
+  <!-- Checkout Toast -->
+  <div class="checkout-toast" id="checkoutToast">
+    <i class="ri-checkbox-circle-fill"></i>
+    <div>
+      <strong>Order Placed!</strong>
+      <p>Your build is being prepared. We'll be in touch soon.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
