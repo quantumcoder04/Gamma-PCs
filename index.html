@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="GAMMA PCs builds high-performance gaming PCs, custom workstations, and premium RGB desktop computers. Build PC online in India with full customization.">
-  <meta name="keywords" content="build pc online, gaming pc build, pc build india, build my pc, custom pc build india, build your pc, build pc online india, pc game, gaming pc, Gaming PC, Custom PC, GAMMA PCs, Budget Gaming PC">
+  <meta name="description" content="GAMMA PCs builds high-performance gaming PCs, custom workstations, and premium RGB desktop computers.">
+  <meta name="keywords" content="build pc online, gaming pc build, pc build india, custom pc build india, gaming pc, GAMMA PCs">
   <meta name="author" content="GAMMA PCs">
   <title>GAMMA PCs - The PC Expert</title>
   <link rel="stylesheet" href="style.css" />
@@ -14,18 +14,12 @@
 
   <!-- Navigation -->
   <nav class="nav">
-    <div class="logo"><img src="Assets/logo.png" alt="GAMMA PCs" width="150px"></div>
+    <div class="logo"><span class="logo-text">ΓAMMA PCs</span></div>
 
     <!-- Search Bar -->
     <div class="search-wrapper">
       <i class="ri-search-line search-icon"></i>
-      <input
-        type="text"
-        id="searchInput"
-        class="search-input"
-        placeholder="Search builds"
-        autocomplete="off"
-      />
+      <input type="text" id="searchInput" class="search-input" placeholder="Search builds" autocomplete="off"/>
       <button class="search-clear" id="searchClear" aria-label="Clear search">
         <i class="ri-close-line"></i>
       </button>
@@ -46,82 +40,70 @@
   <section class="hero">
     <h1>UNLEASH GOD-TIER PERFORMANCE</h1>
     <p>Premium Gaming PCs Built for Legends</p>
-    <button class="hero-btn">Shop Now</button>
+    <button class="hero-btn" onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">Shop Now</button>
   </section>
 
-  <!-- Products Title -->
-  <section class="Title">
-    <h2>THE GREEK SERIES</h2>
-    <p class="search-results-label" id="searchResultsLabel"></p>
+  <!-- Catalog Section -->
+  <section class="catalog-section" id="catalog">
+
+    <!-- Filter & Sort Bar -->
+    <div class="filter-bar">
+      <div class="filter-left">
+        <h2 class="section-title">THE GREEK SERIES</h2>
+        <p class="search-results-label" id="searchResultsLabel"></p>
+      </div>
+      <div class="filter-controls">
+
+        <!-- Category Filter -->
+        <div class="filter-group">
+          <label>Category</label>
+          <div class="chip-group" id="categoryChips">
+            <button class="chip active" data-cat="all">All</button>
+            <button class="chip" data-cat="gaming">Gaming</button>
+            <button class="chip" data-cat="workstation">Workstation</button>
+            <button class="chip" data-cat="limited">Limited</button>
+          </div>
+        </div>
+
+        <!-- Price Range Filter -->
+        <div class="filter-group">
+          <label>Max Price: <span id="priceLabel">₹2,00,000</span></label>
+          <input type="range" id="priceRange" min="50000" max="200000" step="10000" value="200000" class="price-slider"/>
+        </div>
+
+        <!-- Sort -->
+        <div class="filter-group">
+          <label>Sort By</label>
+          <select id="sortSelect" class="sort-select">
+            <option value="default">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name-asc">Name: A–Z</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products" id="productsGrid"></div>
+
+    <!-- No Results -->
+    <div class="no-results" id="noResults">
+      <i class="ri-search-eye-line"></i>
+      <p>No builds found for "<span id="noResultsQuery"></span>"</p>
+      <span>Try: Zeus, Kratos, Thor, Poseidon, Budget, Workstation</span>
+    </div>
+
   </section>
-
-  <!-- Products -->
-  <section class="products" id="productsGrid">
-
-    <div class="product-card" data-name="zeus" data-tags="top performance flagship premium">
-      <img src="Assets/The Zeus.jpg" alt="ZEUS PC">
-      <h2>ZEUS</h2>
-      <p>Top of the Line Performance</p>
-      <span class="price">₹1,50,000</span>
-      <button>See More</button>
-    </div>
-
-    <div class="product-card" data-name="kratos" data-tags="budget gaming beast affordable mid-range">
-      <img src="Assets/The Kratos.jpg" alt="KRATOS PC">
-      <h2>KRATOS</h2>
-      <p>Budget Friendly Gaming Beast</p>
-      <span class="price">₹70,000</span>
-      <button>See More</button>
-    </div>
-
-    <div class="product-card" data-name="thor" data-tags="workstation ultimate professional creator">
-      <img src="Assets/Thor.jpeg" alt="THOR PC">
-      <h2>THOR</h2>
-      <p>Ultimate Workstation PC</p>
-      <span class="price">₹1,00,000</span>
-      <button>See More</button>
-    </div>
-
-    <div class="product-card" data-name="poseidon" data-tags="limited edition event special exclusive">
-      <img src="Assets/Poseidon.jpg" alt="POSEIDON PC">
-      <h2>POSEIDON</h2>
-      <p>Limited Edition Event Build</p>
-      <span class="price">₹1,70,000</span>
-      <button>See More</button>
-    </div>
-
-  </section>
-
-  <!-- No Results Message -->
-  <div class="no-results" id="noResults">
-    <i class="ri-search-eye-line"></i>
-    <p>No builds found for "<span id="noResultsQuery"></span>"</p>
-    <span>Try searching: Zeus, Kratos, Thor, Poseidon, Budget, Workstation</span>
-  </div>
 
   <!-- About Section -->
   <section class="about">
     <div class="about-container">
       <h2>About GAMMA PCs</h2>
-      <p>
-        At GAMMA PCs, we help gamers and creators build PC online with complete confidence.
-        Whether you want a high-performance gaming pc build or a powerful workstation,
-        we make it easy to build your pc exactly the way you want.
-      </p>
-      <p>
-        Looking to build my pc in India? We specialize in custom pc build india solutions,
-        offering premium components, expert assembly, and full testing before delivery.
-        From Budget Gaming PC setups to elite Gaming PC rigs for competitive pc game performance,
-        we deliver reliable power and stunning design.
-      </p>
-      <p>
-        Our platform lets you build pc online india with full customization control.
-        Choose your processor, graphics card, storage, cooling, and aesthetics.
-        Every Custom PC is built for performance, durability, and long-term value.
-      </p>
-      <p class="highlight">
-        Build your dream gaming pc today with GAMMA PCs.
-      </p>
+      <p>At GAMMA PCs, we help gamers and creators build PCs online with complete confidence. Whether you want a high-performance gaming build or a powerful workstation, we make it easy to build exactly the way you want.</p>
+      <p>We specialize in custom PC solutions, offering premium components, expert assembly, and full testing before delivery. From Budget Gaming PC setups to elite rigs for competitive gaming, we deliver reliable power and stunning design.</p>
+      <p class="highlight">Build your dream gaming PC today with GAMMA PCs.</p>
     </div>
   </section>
 
@@ -137,22 +119,14 @@
   <div class="cart-modal" id="cartModal">
     <div class="cart-header">
       <h2><i class="ri-shopping-cart-2-fill"></i> Your Cart</h2>
-      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">
-        <i class="ri-close-line"></i>
-      </button>
+      <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart"><i class="ri-close-line"></i></button>
     </div>
-
-    <!-- Empty State -->
     <div class="cart-empty" id="cartEmpty">
       <i class="ri-inbox-line"></i>
       <p>Your cart is empty</p>
       <span>Add a build to get started</span>
     </div>
-
-    <!-- Items List -->
     <ul class="cart-items-list" id="cartItemsList"></ul>
-
-    <!-- Footer: Total + Checkout -->
     <div class="cart-footer" id="cartFooter" style="display:none;">
       <div class="cart-total-row">
         <span>Total</span>
